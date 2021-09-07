@@ -1,0 +1,14 @@
+<%= turbo_frame_tag 'customer_modal' %>
+
+<div class="max-w-3xl mx-auto mt-8">
+  <div class="flex justify-between items-baseline mb-6" data-controller="modal" data-modal-prevent-default-action-opening="false">
+    <h1 class="text-3xl text-gray-900">Customers</h1>
+    <%= link_to 'New Customer', new_customer_path, class: "text-blue-600", data: { action: "click->modal#open", 'turbo-frame': 'customer_modal' } %>
+    <%= render 'modal' %>
+  </div>
+  <div id="customers" class="flex flex-col items-baseline space-y-6 p-4 shadow-lg rounded">
+    <% @customers.each do |customer| %>
+      <%= render "customer", customer: customer %>
+    <% end %>
+  </div>
+</div>

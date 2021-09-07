@@ -1,0 +1,7 @@
+<%= turbo_frame_tag 'customer_modal' do %>
+  <turbo-stream target="customer_form" action="replace">
+    <template>
+      <%= render partial: "form", locals: { customer: @customer } %>
+    </template>
+  </turbo-stream>
+<% end %>
