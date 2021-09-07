@@ -4495,7 +4495,7 @@ modern-normalize@^1.1.0:
   resolved "https://registry.yarnpkg.com/modern-normalize/-/modern-normalize-1.1.0.tgz#da8e80140d9221426bd4f725c6e11283d34f90b7"
   integrity sha512-2lMlY1Yc1+CUy0gw4H95uNN7vjbpoED7NNRSBHE25nWfLBdmMzFCsPshlzbxHz+gYMcBEUN8V4pU16prcdPSgA==
 
-morphdom@^2.6.1:
+"morphdom@>=2.6.0 <3.0.0", morphdom@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/morphdom/-/morphdom-2.6.1.tgz#e868e24f989fa3183004b159aed643e628b4306e"
   integrity sha512-Y8YRbAEP3eKykroIBWrjcfMw7mmwJfjhqdpSvoqinu8Y702nAwikpXcNFDiIkyvfCLxLM9Wu95RZqo4a9jFBaA==
@@ -4511,6 +4511,13 @@ move-concurrently@^1.0.1:
     mkdirp "^0.5.1"
     rimraf "^2.5.4"
     run-queue "^1.0.3"
+
+mrujs@^0.4.10:
+  version "0.4.10"
+  resolved "https://registry.yarnpkg.com/mrujs/-/mrujs-0.4.10.tgz#855a58277dc4aa250ed4e4854c53cb5a61180e83"
+  integrity sha512-4UwXRLP2NvTURWNFJvtp/noXiuC+yu6k7tQcS50VrmFVibuEu2oh1hjJ0EJKUSu1LZvQ8adQJBTEEwU03YA7KQ==
+  dependencies:
+    morphdom ">=2.6.0 <3.0.0"
 
 ms@2.0.0:
   version "2.0.0"
