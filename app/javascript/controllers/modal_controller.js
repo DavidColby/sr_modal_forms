@@ -100,11 +100,5 @@ export default class extends ApplicationController {
 
   handleSuccess() {
     this.close()
-    this.stimulate("Modal#success")
-  }
-
-  handleError() {
-    const [_data, _status, xhr] = event.detail
-    this.stimulate("Modal#failure", xhr.response)
   }
 }

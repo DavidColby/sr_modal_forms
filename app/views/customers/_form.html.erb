@@ -1,4 +1,4 @@
-<%= form_with(model: customer, id: "customer_form", data: { cable_car: "" }) do |form| %>
+<%= form_with(model: customer, id: "customer_form", data: { cable_car: "", action: "ajax:success->modal#handleSuccess" }) do |form| %>
   <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
     <% if customer.errors.any? %>
       <div class="p-4 border border-red-600" data-modal-target="errors">

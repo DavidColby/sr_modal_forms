@@ -22,11 +22,28 @@ class CustomersController < ApplicationController
   # POST /customers or /customers.json
   def create
     @customer = Customer.new(customer_params)
-
     if @customer.save
-      head :ok
+      render operations: cable_car
+        .append(
+          '#customers',
+          html: render_to_string(
+            partial: 'customer',
+            locals: {
+              customer: @customer
+            }
+          )
+        )
     else
-      render partial: 'form', locals: { customer: @customer }, status: :unprocessable_entity
+      render operations: cable_car
+        .inner_html(
+          '#customer_form',
+          html: render_to_string(
+            partial: 'form',
+            locals: {
+              customer: @customer
+            }
+          )
+        ), status: :unprocessable_entity
     end
   end
 
